@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于我 - 我的个人网站</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .page-content {
+            padding: 120px 20px 80px;
+            min-height: calc(100vh - 200px);
+        }
+        
+        .about-section {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .about-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: #333;
+        }
+        
+        .about-content {
+            background: white;
+            padding: 3rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 1.5rem;
+        }
+        
+        .skills-section {
+            margin-top: 3rem;
+        }
+        
+        .skills-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: #333;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+        
+        .skill-item {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 500;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">我的网站</a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">首页</a></li>
+                <li><a href="about.html" class="nav-link active">关于我</a></li>
+                <li><a href="projects.html" class="nav-link">项目</a></li>
+                <li><a href="contact.html" class="nav-link">联系</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-content">
+        <div class="about-section">
+            <h1 class="about-title">关于我</h1>
+            
+            <div class="about-content">
+                <p class="about-text">
+                    你好！我是一个热爱技术的创意开发者，喜欢探索新技术，创造有趣的数字产品。
+                </p>
+                
+                <p class="about-text">
+                    我使用MacBook Air M4进行开发，这是一款性能强大的笔记本电脑，让我能够高效地完成各种开发任务。
+                </p>
+                
+                <p class="about-text">
+                    我对AI、网页开发和视频创作特别感兴趣，喜欢将这些技术结合起来，创造出独特的作品。
+                </p>
+                
+                <div class="skills-section">
+                    <h2 class="skills-title">我的技能</h2>
+                    <div class="skills-grid">
+                        <div class="skill-item">HTML/CSS</div>
+                        <div class="skill-item">JavaScript</div>
+                        <div class="skill-item">Python</div>
+                        <div class="skill-item">Git</div>
+                        <div class="skill-item">AI应用开发</div>
+                        <div class="skill-item">视频创作</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 我的个人网站. 保留所有权利.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>联系我 - 我的个人网站</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .page-content {
+            padding: 120px 20px 80px;
+            min-height: calc(100vh - 200px);
+        }
+        
+        .contact-section {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .page-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            color: #333;
+            text-align: center;
+        }
+        
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+        
+        .contact-info {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .info-item {
+            margin-bottom: 1.5rem;
+        }
+        
+        .info-title {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+        
+        .info-text {
+            color: #666;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .social-link {
+            width: 50px;
+            height: 50px;
+            background: #f3f4f6;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            text-decoration: none;
+            transition: background 0.3s, transform 0.3s;
+        }
+        
+        .social-link:hover {
+            background: #6366f1;
+            transform: translateY(-3px);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-label {
+            display: block;
+            font-weight: 500;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+        
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border-color 0.3s;
+        }
+        
+        .form-input:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: #6366f1;
+        }
+        
+        .form-textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+        }
+        
+        @media (max-width: 768px) {
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">我的网站</a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">首页</a></li>
+                <li><a href="about.html" class="nav-link">关于我</a></li>
+                <li><a href="projects.html" class="nav-link">项目</a></li>
+                <li><a href="contact.html" class="nav-link active">联系</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-content">
+        <div class="contact-section">
+            <h1 class="page-title">联系我</h1>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2 style="margin-bottom: 1.5rem; color: #333;">联系方式</h2>
+                    
+                    <div class="info-item">
+                        <div class="info-title">📧 邮箱</div>
+                        <div class="info-text">your@email.com</div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-title">📍 位置</div>
+                        <div class="info-text">中国</div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-title">💼 工作时间</div>
+                        <div class="info-text">周一至周五 9:00-18:00</div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="https://github.com" class="social-link" title="GitHub">📦</a>
+                        <a href="#" class="social-link" title="微信">💬</a>
+                        <a href="#" class="social-link" title="Twitter">🐦</a>
+                        <a href="#" class="social-link" title="LinkedIn">💼</a>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h2 style="margin-bottom: 1.5rem; color: #333;">发送消息</h2>
+                    
+                    <form onsubmit="handleSubmit(event)">
+                        <div class="form-group">
+                            <label class="form-label" for="name">姓名</label>
+                            <input type="text" id="name" class="form-input" placeholder="请输入您的姓名" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="email">邮箱</label>
+                            <input type="email" id="email" class="form-input" placeholder="请输入您的邮箱" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="subject">主题</label>
+                            <input type="text" id="subject" class="form-input" placeholder="请输入消息主题">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="message">消息内容</label>
+                            <textarea id="message" class="form-textarea" placeholder="请输入您的消息..." required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">发送消息</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 我的个人网站. 保留所有权利.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+            alert('感谢您的消息！这是一个演示表单，实际发送功能需要后端支持。');
+            event.target.reset();
+        }
+    </script>
+</body>
+</html>
