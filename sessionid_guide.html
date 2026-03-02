@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chrome浏览器获取SessionID指南</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .step {
+            margin: 30px 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+        }
+        h2 {
+            color: #555;
+            margin-bottom: 10px;
+        }
+        .code-block {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 3px;
+            font-family: monospace;
+            margin: 10px 0;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+        .note {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 4px;
+            padding: 10px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Chrome浏览器获取SessionID详细指南</h1>
+        
+        <div class="step">
+            <h2>步骤1：登录即梦官网</h2>
+            <p>打开Chrome浏览器，访问 <a href="https://jimeng.jianying.com" target="_blank">https://jimeng.jianying.com</a> 并登录你的账号。</p>
+        </div>
+        
+        <div class="step">
+            <h2>步骤2：打开开发者工具</h2>
+            <p>在Chrome浏览器中，有三种方法打开开发者工具：</p>
+            <ul>
+                <li>方法1：按键盘快捷键 <strong>Option + Command + I</strong> (Mac) 或 <strong>Ctrl + Shift + I</strong> (Windows)</li>
+                <li>方法2：点击浏览器右上角的三个点 → 更多工具 → 开发者工具</li>
+                <li>方法3：在页面上右键点击，选择「检查」</li>
+            </ul>
+        </div>
+        
+        <div class="step">
+            <h2>步骤3：找到Application标签</h2>
+            <p>在开发者工具的顶部标签栏中，找到并点击 <strong>Application</strong> 标签。如果没有看到这个标签，点击标签栏右侧的 <strong>»</strong> 按钮，然后选择 <strong>Application</strong>。</p>
+            <div class="note">
+                <strong>注意：</strong>在Chrome的新版本中，这个标签可能叫做 <strong>Storage</strong>。
+            </div>
+        </div>
+        
+        <div class="step">
+            <h2>步骤4：找到Cookies</h2>
+            <p>在左侧导航栏中，展开 <strong>Cookies</strong> 选项，然后点击显示的网站地址（应该是 jimeng.jianying.com）。</p>
+        </div>
+        
+        <div class="step">
+            <h2>步骤5：复制sessionid</h2>
+            <p>在右侧的表格中，找到 <strong>sessionid</strong> 这一行，然后复制 <strong>Value</strong> 列中的值。</p>
+            <div class="note">
+                <strong>提示：</strong>你可以双击Value列中的值，然后按Command+C (Mac) 或 Ctrl+C (Windows) 来复制。
+            </div>
+        </div>
+        
+        <div class="step">
+            <h2>步骤6：粘贴到视频生成界面</h2>
+            <p>回到 <strong>jimeng_video_generator.html</strong> 页面，将复制的sessionid粘贴到「即梦SessionID」输入框中。</p>
+        </div>
+        
+        <div class="step">
+            <h2>如果仍然找不到</h2>
+            <p>如果以上步骤仍然无法找到sessionid，你可以尝试以下方法：</p>
+            <ul>
+                <li>在开发者工具中切换到 <strong>Network</strong> 标签</li>
+                <li>刷新页面</li>
+                <li>在请求列表中找到一个请求，点击它</li>
+                <li>在右侧的 <strong>Headers</strong> 标签中，找到 <strong>Request Headers</strong> 部分</li>
+                <li>查找 <strong>Cookie</strong> 字段，其中包含sessionid</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

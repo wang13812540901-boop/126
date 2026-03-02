@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>即梦AI视频生成 - 耶稣主题</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .form-group {
+            margin: 20px 0;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        textarea {
+            height: 100px;
+            resize: vertical;
+        }
+        .file-upload {
+            border: 2px dashed #ddd;
+            border-radius: 4px;
+            padding: 20px;
+            text-align: center;
+            margin: 10px 0;
+        }
+        .file-upload input {
+            display: block;
+            margin: 10px auto;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .status {
+            margin: 20px 0;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 4px;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>即梦AI视频生成 - 耶稣主题</h1>
+        
+        <div class="form-group">
+            <label for="sessionId">即梦SessionID</label>
+            <input type="text" id="sessionId" placeholder="请输入即梦平台的SessionID">
+            <small>获取方法：登录即梦官网，F12打开开发者工具，Application → Cookies → 复制sessionid值</small>
+        </div>
+        
+        <div class="form-group">
+            <label>参考图片（1-5张）</label>
+            <div class="file-upload">
+                <input type="file" id="imageUpload" multiple accept="image/*">
+                <p>请上传耶稣主题的参考图片，例如耶稣的画像、圣经场景等</p>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label for="prompt">提示词</label>
+            <textarea id="prompt">Jesus Christ standing in a peaceful garden, surrounded by light, speaking with compassion. English language, clear pronunciation, suitable for YouTube audience. Vertical video format. High quality, realistic style.</textarea>
+            <small>提示词会影响视频内容，请根据需要修改</small>
+        </div>
+        
+        <div class="form-group">
+            <label for="duration">视频时长（秒）</label>
+            <input type="text" id="duration" value="120" placeholder="4-15秒">
+            <small>注意：即梦平台可能有时长限制，建议先尝试15秒以内</small>
+        </div>
+        
+        <button onclick="generateVideo()">生成视频</button>
+        
+        <div class="status hidden" id="status">
+            <h3>生成状态</h3>
+            <div id="statusMessage"></div>
+        </div>
+    </div>
+    
+    <script>
+        function generateVideo() {
+            const sessionId = document.getElementById('sessionId').value;
+            const prompt = document.getElementById('prompt').value;
+            const duration = document.getElementById('duration').value;
+            const files = document.getElementById('imageUpload').files;
+            
+            if (!sessionId) {
+                alert('请输入SessionID');
+                return;
+            }
+            
+            if (!files || files.length === 0) {
+                alert('请上传至少一张参考图片');
+                return;
+            }
+            
+            const status = document.getElementById('status');
+            const statusMessage = document.getElementById('statusMessage');
+            status.classList.remove('hidden');
+            statusMessage.innerHTML = '正在准备生成视频...';
+            
+            // 这里需要实现与即梦API的对接
+            // 由于需要后端服务，这里仅做演示
+            setTimeout(() => {
+                statusMessage.innerHTML = '视频生成功能需要后端服务支持，请参考seedance2.0项目搭建完整环境';
+                statusMessage.innerHTML += '<br><br>项目地址：<a href="https://github.com/wwwzhouhui/seedance2.0" target="_blank">https://github.com/wwwzhouhui/seedance2.0</a>';
+            }, 2000);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>前端入门示例</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #333;
+        }
+        .section {
+            margin: 30px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .code-block {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 3px;
+            font-family: monospace;
+            margin: 10px 0;
+        }
+        button {
+            padding: 10px 20px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #45a049;
+        }
+        .demo {
+            margin: 20px 0;
+            padding: 15px;
+            background: #f9f9f9;
+            border: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>前端开发入门指南</h1>
+        
+        <div class="section">
+            <h2>什么是前端开发？</h2>
+            <p>前端开发是创建网站或应用程序用户界面的过程，主要使用以下技术：</p>
+            <ul>
+                <li><strong>HTML</strong> - 网页的结构</li>
+                <li><strong>CSS</strong> - 网页的样式</li>
+                <li><strong>JavaScript</strong> - 网页的交互功能</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>第一个示例：Hello World</h2>
+            <div class="code-block">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Hello World&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Hello World!&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>交互示例</h2>
+            <div class="demo">
+                <p>点击按钮查看效果：</p>
+                <button onclick="sayHello()">点击我</button>
+                <p id="output"></p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>下一步学习</h2>
+            <p>推荐学习资源：</p>
+            <ul>
+                <li><a href="https://developer.mozilla.org/zh-CN/docs/Learn" target="_blank">MDN Web 文档</a></li>
+                <li><a href="https://www.w3schools.com/" target="_blank">W3Schools</a></li>
+                <li><a href="https://www.runoob.com/" target="_blank">菜鸟教程</a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <script>
+        function sayHello() {
+            document.getElementById('output').textContent = '你好！欢迎开始学习前端开发！';
+        }
+    </script>
+</body>
+</html>
